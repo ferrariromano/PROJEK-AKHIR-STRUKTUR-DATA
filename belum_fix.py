@@ -3,19 +3,19 @@ import os
 class queue:
     os.system("CLS")
     def __init__(self,n=None):
-        print("------------------------------------------")
-        print("PROGRAM INI DIBUAT OLEH KELOMPOK 8 \t")
-        print("------------------------------------------")
-        print("\t Farisca Ega Rahmawati(212410103030)")
-        print("\t Satria Cahya Kusuma(212410103030)")
-        print("\t Ferrari Romano (212410103101)")
-        print("-----------------------------------------")
-        input("\n tekan enter untuk lanjut program . . .")
+        print("================================================")
+        print("|\tPROGRAM INI DIBUAT OLEH KELOMPOK 8     |\t")
+        print("|----------------------------------------------|")
+        print("|\t Farisca Ega Rahmawati(212410103030)   |")
+        print("|\t Satria Cahya Kusuma(212410103030)     |")
+        print("|\t Ferrari Romano (212410103101)         |")
+        print("================================================")
+        input("\n tekan [enter] untuk lanjut program . . .")
         os.system("CLS")
-        print("-----------------------------------------")
-        print("ANTRIAN SERVICE HANPONE ")
-        print("STRUKTUR DATA B")
-        print("-----------------------------------------")
+        print("================================================")
+        print("|\tANTRIAN SERVICE HANPONE              \t|")
+        print("|\tSTRUKTUR DATA B                      \t|")
+        print("---------------------------------------------")
         input("\n tekan enter untuk lanjut . . . ")
         os.system("CLS")
         print("sebuah antrian dibuat dengan (kapasitas : ",n, ")")
@@ -29,13 +29,13 @@ class queue:
     def menu (self):
         import os 
         os.system("CLS")
-        print("------------------------------------------")
-        print("DAFTAR MENU                               ")
-        print("------------------------------------------")
-        print("1.melihat daftar antrian                              ")
-        print("2.menambah daftar antrian                 ")
-        print("3.antrian keluar               ")
-        print("4.keluar program ")
+        print("===========================================")
+        print("|\t\t  DAFTAR MENU                           |")
+        print("|--------------------------------------------|\n")
+        print("|\t 1.melihat daftar antrian                 |\n")
+        print("|\t 2.menambah daftar antrian                |\n")
+        print("|\t 3.antrian keluar                         |\n")
+        print("|\t 4.keluar program                         |\n")
         pil = input("\n Masukkan pilihan yang ingin dilihat = ")
         self.pilihmenu(pil)
 
@@ -55,7 +55,7 @@ class queue:
         self.name.append(name)
         self.Nohp.append(Nohp)
         self.current_size = len(self.name)
-        print("\n>> antrian dengan data : ", name , "dengan no.hp :", Nohp, "Telah ditambahkan ke antrian")
+        print("\n>>> antrian dengan data : ", name , "dengan no.hp :", Nohp, "Telah ditambahkan ke antrian")
 
     def dequeue(self):
         datakeluar = self.name.pop(0)
@@ -69,11 +69,11 @@ class queue:
     def visualisasiqueue(self): #membuat antrian ke arak kanan (terdepan dikanan)
         print("\nVisualisasi Queue\n")
         for i in range(self.size):
-            print("      [%2d]       "% (self.size-i), end="")
+            print("      [%2d]      "% (self.size-i), end="")
         print()
         
         for i in range(self.size):
-            print("------------",end="")
+            print("-----------",end="")
         print()
     
         jumlahposisikosong = self.size - self.current_size
@@ -89,9 +89,9 @@ class queue:
         jumlahposisikosong = self.size - self.current_size
         for i in range(self.size):
             if i < jumlahposisikosong:
-                print("      %10s      "%(""), end="")
+                print("      %10s    "%(""), end="")
             else:
-                print("      %10s      "%(self.name[self.size-1-i]),end="")
+                print("      %10s    "%(self.name[self.size-1-i]),end="")
                 
         print(">> [NO HANDPHONE]", end="")
         print()
@@ -115,20 +115,20 @@ class queue:
             self.__init__()
 
     def lihatdata(self):
-        print("\n-------------------------------------------------")
-        print('ANDA SEDANG BERADA DI DALAM MENU MELIHAT DATA')
-        print("-------------------------------------------------\n")
+        print("\n-------------------------------------------")
+        print("ANDA SEDANG BERADA DI DALAM MENU MELIHAT DATA")
+        print("-------------------------------------------\n")
         queue.visualisasiqueue(self)
         input()
         self.menu()
 
     def tambahdata(self):
-        print('\n-------------------------------------------------')
-        print('TAMBAHKAN DATA ANDA')
-        print('-------------------------------------------------\n')
+        print("\n-------------------------------------------")
+        print("TAMBAHKAN DATA ANDA")
+        print("-------------------------------------------\n")
         if self.isfull():
-            print('MOHON MAAF')
-            print('ANTRIAN TIDAK DAPAT DITAMBAHKAN KARNA SUDAH PENUH')        
+            print("MOHON MAAF")
+            print("ANTRIAN TIDAK DAPAT DITAMBAHKAN KARNA SUDAH PENUH")        
         else:
             name = input("MASUKKAN NAMA ANDA   : ")
             Nohp = input("MASUKKAN NO HP ANDA  : ")

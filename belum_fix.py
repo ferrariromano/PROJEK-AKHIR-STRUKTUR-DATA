@@ -25,6 +25,7 @@ class queue:
         self.current_size = 0
         self.name = []
         self.Nohp = []
+        self.kerusakan = []
 
     def menu (self):
         import os 
@@ -51,18 +52,22 @@ class queue:
         else : 
             return False
 
-    def enqueue(self, name, Nohp): 
+    def enqueue(self, name, Nohp, kerusakan): 
         self.name.append(name)
         self.Nohp.append(Nohp)
+        self.kerusakan.append(kerusakan)
         self.current_size = len(self.name)
-        print("\n>>> antrian dengan data : ", name , "dengan no.hp :", Nohp, "Telah ditambahkan ke antrian")
+        self.current_size = len(self.kerusakan)
+        print("\n>>> antrian dengan data : ", name , "dengan no.hp :", Nohp, "Kerusakan yang dialami :",kerusakan,"BERHASIL DITAMBAHKAN")
 
     def dequeue(self):
         datakeluar = self.name.pop(0)
         datakeluar1 = self.Nohp.pop(0)
+        datakeluar2 = self.kerusakan.pop(0)
         self.current_size = len (self.name)
         self.current_size = len (self.Nohp)
-        print("\n\t antrian melanjutkan atas nama saudara", datakeluar, "dengan no hp :", datakeluar1)
+        self.current_size = len (self.kerusakan)
+        print("\n\t antrian melanjutkan atas nama saudara", datakeluar, "dengan no hp :", datakeluar1,"Kerusakan yang dialami:",datakeluar2)
         print("\t\tdipersilahkan duduk di loket yang tersedia")
 
 
@@ -94,6 +99,16 @@ class queue:
                 print("      %10s    "%(self.Nohp[self.size-1-i]),end="")
                 
         print(">> [NO HANDPHONE]", end="")
+        print()
+
+        jumlahposisikosong = self.size - self.current_size
+        for i in range(self.size):
+            if i < jumlahposisikosong:
+                print("      %10s    "%(""), end="")
+            else:
+                print("      %10s    "%(self.kerusakan[self.size-1-i]),end="")
+                
+        print(">> [KERUSAKAN HANDPHONE]", end="")
         print()
 
     def pilihmenu(self,p):
@@ -132,7 +147,8 @@ class queue:
         else:
             name = input("MASUKKAN NAMA ANDA   : ")
             Nohp = input("MASUKKAN NO HP ANDA  : ")
-            self.enqueue(name, Nohp)            
+            kerusakan = input("MASUKKAN KERUSAKAN YANG DIALAMI : ")
+            self.enqueue(name, Nohp,kerusakan)            
         input()
         self.menu()
 

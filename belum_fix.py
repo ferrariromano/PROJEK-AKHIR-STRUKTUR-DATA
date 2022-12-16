@@ -63,7 +63,7 @@ class queue:
         self.current_size = len (self.name)
         self.current_size = len (self.Nohp)
         print("\n\t antrian melanjutkan atas nama saudara", datakeluar, "dengan no hp :", datakeluar1)
-        print("\t\tdipersilahkan duduk di loket yang tersdia")
+        print("\t\tdipersilahkan duduk di loket yang tersedia")
 
 
     def visualisasiqueue(self): #membuat antrian ke arak kanan (terdepan dikanan)
@@ -91,7 +91,7 @@ class queue:
             if i < jumlahposisikosong:
                 print("      %10s    "%(""), end="")
             else:
-                print("      %10s    "%(self.name[self.size-1-i]),end="")
+                print("      %10s    "%(self.Nohp[self.size-1-i]),end="")
                 
         print(">> [NO HANDPHONE]", end="")
         print()

@@ -6,40 +6,40 @@ class queue:
         print("================================================")
         print("|\tPROGRAM INI DIBUAT OLEH KELOMPOK 8     |\t")
         print("|----------------------------------------------|")
-        print("|\t Farisca Ega Rahmawati(212410103030)   |")
-        print("|\t Satria Cahya Kusuma(212410103030)     |")
-        print("|\t Ferrari Romano (212410103101)         |")
+        print("|\t Farisca Ega Rahmawati (212410103030)  |")
+        print("|\t Satria Cahya Kusuma   (212410103030)  |")
+        print("|\t Ferrari Romano        (212410103101)  |")
         print("================================================")
         input("\n tekan [enter] untuk lanjut program . . .")
         os.system("CLS")
-        print("================================================")
+        print("=================================================")
         print("|\tANTRIAN SERVICE HANPONE              \t|")
         print("|\tSTRUKTUR DATA B                      \t|")
-        print("---------------------------------------------")
-        input("\n tekan enter untuk lanjut . . . ")
+        print("-------------------------------------------------")
+        input("\n tekan [enter] untuk lanjut . . . ")
         os.system("CLS")
-        print("sebuah antrian dibuat dengan (kapasitas : ",n, ")")
+        print("sebuah antrian dibuat dengan (kapasitas = ",n, ")")
         print("-----------------------------------------")
-        n = int(input("masukkan jumlah antrian hari inI (Maksimalnya) = "))
+        n = int(input("masukkan jumlah antrian hari ini (Maksimalnya) = "))
         self.size = n
         self.current_size = 0
         self.name = []
         self.Nohp = []
         self.kerusakan = []
-
+        
     def menu (self):
         import os 
         os.system("CLS")
-        print("===========================================")
-        print("|\t\t  DAFTAR MENU                           |")
-        print("|--------------------------------------------|\n")
-        print("|\t 1.melihat daftar antrian                 |\n")
-        print("|\t 2.menambah daftar antrian                |\n")
-        print("|\t 3.antrian keluar                         |\n")
-        print("|\t 4.keluar program                         |\n")
+        print("===================================================")
+        print("|\t\t  DAFTAR MENU                     |")
+        print("|-------------------------------------------------|\n")
+        print("|\t 1.Melihat Daftar Antrian Hari Ini        |\n")
+        print("|\t 2.Menambah Daftar Antrian Hari Ini       |\n")
+        print("|\t 3.Antrian Keluar                         |\n")
+        print("|\t 4.Keluar Program                         |\n")
         pil = input("\n Masukkan pilihan yang ingin dilihat = ")
         self.pilihmenu(pil)
-
+    
     def isempty(self) :
         if self.current_size == 0 :
             return True
@@ -58,7 +58,7 @@ class queue:
         self.kerusakan.append(kerusakan)
         self.current_size = len(self.name)
         self.current_size = len(self.kerusakan)
-        print("\n>>> antrian dengan data : ", name , "dengan no.hp :", Nohp, "Kerusakan yang dialami :",kerusakan,"BERHASIL DITAMBAHKAN")
+        print("\n>>> Antrian Dengan Data : ", name , "Dengan No.HP : ", Nohp, "Kerusakan yang dialami : ",kerusakan,"BERHASIL DITAMBAHKAN")
 
     def dequeue(self):
         datakeluar = self.name.pop(0)
@@ -67,7 +67,7 @@ class queue:
         self.current_size = len (self.name)
         self.current_size = len (self.Nohp)
         self.current_size = len (self.kerusakan)
-        print("\n\t antrian melanjutkan atas nama saudara", datakeluar, "dengan no hp :", datakeluar1,"Kerusakan yang dialami:",datakeluar2)
+        print("\n\tAntrian melanjutkan atas Nama Saudara : ", datakeluar, "dengan No.HP : ", datakeluar1,"Kerusakan yang dialami : ",datakeluar2)
         print("\t\tdipersilahkan duduk di loket yang tersedia")
 
 
@@ -123,11 +123,12 @@ class queue:
         if p == "4":
             os.system("cls")
             print("\n\n -- TERIMAKASIH TELAH BERKUNJUNGG --")
-            print("\t SEMOGA HARIMU MENYENANGKAN")
+            print("\n      SEMOGA HARIMU MENYENANGKAN    ")    
+            print("\n\t          ")    
         else:
             print("--MOHON MASUKKAN NOMOR SESUAI DAFTAR MENU--")
             input()
-            self.__init__()
+            self.menu()
 
     def lihatdata(self):
         print("\n-------------------------------------------")
@@ -160,8 +161,6 @@ class queue:
             
         input()
         self.menu()
-
-
 
 if __name__ == "__main__":
     q = queue()
